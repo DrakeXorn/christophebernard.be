@@ -3,6 +3,8 @@ import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
 
+import Link from "@docusaurus/Link";
+import Translate from "@docusaurus/Translate";
 import styles from "./index.module.css";
 
 function HomepageHeader() {
@@ -13,11 +15,10 @@ function HomepageHeader() {
 				<img src="/img/logo.png" alt="Christophe Bernard" />
 				<h1 className="hero__title">{siteConfig.title}</h1>
 				<p className="hero__subtitle">
-					Master's student in Computer systems architecture
+					<Translate id="homepage.hero-subtitle" />
 				</p>
 				<p>
-					Cat lover, gamer and tech enthusiast with a passion for teaching and
-					sharing knowledge
+					<Translate id="homepage.hero-subtitle-2" />
 				</p>
 			</div>
 		</header>
@@ -31,30 +32,41 @@ function HomepageContents() {
 				<div className="container">
 					<div className="row">
 						<article className={clsx("col col--4", styles.feature)}>
-							<Heading as="h2">Who am I?</Heading>
+							<Heading as="h2">
+								<Translate id="homepage.who-am-i-title" />
+							</Heading>
 							<p>
-								I am a Belgian Master's student in Computer systems architecture
-								at the Haute-École de Namur-Liège-Luxembourg (HENALLUX),
-								Belgium.
+								<Translate id="homepage.who-am-i-1" />
 							</p>
 							<p>
-								Previously teacher in programming and computer science, I am now
-								focusing on my studies to pursue a career in the IT and teaching
-								industries.
+								<Translate id="homepage.who-am-i-2" />
 							</p>
 						</article>
 						<article className={clsx("col col--4", styles.feature)}>
-							<Heading as="h2">What do I do?</Heading>
+							<Heading as="h2">
+								<Translate id="homepage.what-do-i-do-title" />
+							</Heading>
 							<p>
-								I am passionate about technology, video games, and teaching. I
-								like to share my knowledge and help others to learn new things
-								and understand more or less complex concepts.
+								<Translate id="homepage.what-do-i-do" />
 							</p>
 						</article>
 						<article className={clsx("col col--4", styles.feature)}>
-							<Heading as="h2">Want to know my projects?</Heading>
+							<Heading as="h2">
+								<Translate id="homepage.about-me-title" />
+							</Heading>
 							<p>
-								Check out my <a href="/docs/about">about page</a>!
+								<Translate
+									id="homepage.about-me"
+									values={{
+										aboutLink: (
+											<Link to="/docs/about">
+												<Translate id="homepage.about-me-about-page" />
+											</Link>
+										),
+									}}
+								>
+									{"Check out my {aboutLink}!"}
+								</Translate>
 							</p>
 						</article>
 					</div>
